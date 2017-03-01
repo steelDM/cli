@@ -1,0 +1,25 @@
+{
+  "name": "vendor_dll_004adfca0ee3cc5ca5fd",
+  "content": {
+    "../node_modules/.npminstall/process/0.11.9/process/browser.js": {
+      "id": 0,
+      "meta": {}
+    },
+    "../node_modules/.npminstall/vue-router/2.2.0/vue-router/dist/vue-router.common.js": {
+      "id": 1,
+      "meta": {}
+    },
+    "../node_modules/.npminstall/vue-validator/2.1.7/vue-validator/dist/vue-validator.common.js": {
+      "id": 2,
+      "meta": {}
+    },
+    "../node_modules/.npminstall/vue/2.1.10/vue/dist/vue.runtime.common.js": {
+      "id": 3,
+      "meta": {}
+    },
+    "../node_modules/.npminstall/webpack/2.2.1/webpack/buildin/global.js": {
+      "id": 4,
+      "meta": {}
+    }
+  }
+}
