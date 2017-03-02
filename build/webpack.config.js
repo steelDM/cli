@@ -77,14 +77,6 @@ module.exports = {
             chunks: ['manifest','index','vendor'],
             inject: true
         })
-
-        //多入口配置
-        // new HtmlWebpackPlugin({
-        //     filename: 'tool.html',
-        //     template: path.resolve(__dirname, './tool.html'),
-        //     chunks: ['manifest','tool','vendor'],
-        //     inject: true
-        // })
     ],
     resolve: {
         extensions: ['.js', '.vue', '.css', '.json'],

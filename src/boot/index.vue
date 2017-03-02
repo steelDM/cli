@@ -12,7 +12,6 @@
 <script>
     
     import navMenu from '@components/header.vue';
-    import { mapState } from 'vuex'
 
     export default {
         components: {
@@ -21,11 +20,6 @@
         data() {
             return {
             };
-        },
-        computed: {
-            // ...mapState({
-            //     //vuex映射数据
-            // })
         },
         mounted () {
           this.$nextTick(function () {

@@ -6,13 +6,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: {
-        index:'./src/boot/index'
+        index:'./src/boot/index.js'
     },
     output: {
         path: path.join(process.cwd(), 'dist'),
-        publicPath: '/dist/',
-        filename: '[name].js',
-        chunkFilename: '[id].[chunkhash].js'
+        publicPath: '/',
+        filename: '[name].js'
     },
     module: {
         loaders: [
@@ -59,6 +58,12 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: path.join(process.cwd(), './index.html'),
+            chunks: ['manifest','index','vendor'],
+            inject: true
+        }),
         new webpack.DllReferencePlugin({
           context: __dirname,
           manifest: require('./manifest.json')
@@ -68,21 +73,7 @@ module.exports = {
             from: path.join(process.cwd(), './src/resource'),
             to: './resource'
           }
-        ]),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: path.join(process.cwd(), './index.html'),
-            chunks: ['manifest','index','vendor'],
-            inject: true
-        })
-
-        //多入口配置
-        // new HtmlWebpackPlugin({
-        //     filename: 'tool.html',
-        //     template: path.resolve(__dirname, './tool.html'),
-        //     chunks: ['manifest','tool','vendor'],
-        //     inject: true
-        // })
+        ])
     ],
     resolve: {
         extensions: ['.js', '.vue', '.css', '.json'],
