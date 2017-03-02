@@ -1,16 +1,14 @@
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const fs = require('fs');
 
 const vendors = [
   'vue',
   'vue-router',
-  'vue-validator'
+  'vuex'
 ];
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
   entry: {
     'vendor_dll': vendors
   },
@@ -25,6 +23,11 @@ module.exports = {
       path: path.join(__dirname, './manifest.json'),
       name: '[name]_[chunkhash]',
       context: __dirname,
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      } 
     }),
     //动态修改入口html,支持数组
     new ReplaceHtmlVendorPlugin({
