@@ -1,8 +1,9 @@
 {
-  "name": "project_name",
+  "name": "{{name}}",
   "version": "1.0.0",
-  "description": "项目名称",
-  "main": "",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "private": true,
   "scripts": {
     "dev": "node build/server.js",
     "lint": "eslint --ext .js,.vue src",

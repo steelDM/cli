@@ -4,7 +4,6 @@ var path = require('path')
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.join(process.cwd(), 'index.html'),
     assetsRoot: path.join(process.cwd(), 'dist'),
     assetsSubDirectory: 'resource',
     assetsPublicPath: '/',

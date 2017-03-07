@@ -2,7 +2,6 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('./config')
 var vueLoaderConfig = require('./vue-loader.conf')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -33,6 +32,7 @@ module.exports = {
   },
   module: {
     rules: [
+      // {{#lint}}
       // {
       //   test: /\.(js|vue)$/,
       //   loader: 'eslint-loader',
@@ -42,6 +42,7 @@ module.exports = {
       //     formatter: require('eslint-friendly-formatter')
       //   }
       // },
+      // {{/lint}}
       {
         test: /\.vue$/,
         loader: 'vue-loader',

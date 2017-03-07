@@ -33,10 +33,12 @@ module.exports = merge(baseWebpackConfig, {
           chunks: ['index'],
           inject: true
     }),
+    {{#dll}}
     new webpack.DllReferencePlugin({
       context: __dirname,
       manifest: require('./manifest.json')
     }),
+    {{/dll}}
     new CopyWebpackPlugin([
       {
         from: path.join(process.cwd(), './src/resource'),
