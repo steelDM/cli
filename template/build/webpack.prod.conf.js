@@ -48,7 +48,11 @@ var webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
           filename: 'index.html',
           template: path.join(process.cwd(), './index.html'),
+          {{#if dll}}
           chunks: ['index'],
+          {{else}}
+          chunks: ['index','vendor','manifest'],
+          {{/if}}
           minify: {
             removeComments: true,
             collapseWhitespace: true,
@@ -56,6 +60,7 @@ var webpackConfig = merge(baseWebpackConfig, {
           },
           inject: true
     }),
+
     {{#if dll}}
     new webpack.DllReferencePlugin({
       context: __dirname,
