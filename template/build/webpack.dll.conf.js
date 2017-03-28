@@ -13,7 +13,7 @@ module.exports = {
     'vendor_dll': vendors
   },
   output: {
-    path: 'src/resource/js/dll/',
+    path: '/src/resource/js/dll/',
     filename: '[name]_[chunkhash].js',
     library: '[name]_[chunkhash]'
   },
