@@ -20,7 +20,7 @@ module.exports = {
     'vendor_dll': vendors
   },
   output: {
-    path: path: path.join(__dirname, '../src/resource/js/dll/'),
+    path: path.join(__dirname, '../src/resource/js/dll/'),
     filename: '[name]_[chunkhash].js',
     library: '[name]_[chunkhash]'
   },
