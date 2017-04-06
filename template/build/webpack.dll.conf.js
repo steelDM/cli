@@ -1,6 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
+var config = require('./config')
+var assetsSubDirectory = process.env.NODE_ENV === 'production'
+    ? config.build.assetsSubDirectory
+    : config.dev.assetsSubDirectory
+
+
+
 
 const vendors = [
   'vue',
@@ -87,7 +94,7 @@ ReplaceHtmlVendorPlugin.prototype.apply = function(compiler) {
                 }else{
                     //不存在则在body后插入
                     htmlData = htmlData.replace(/.*<\/body>(.*)/,function($1,$2){
-                        var injectScript = '<script type="text/javascript" src="./src/resource/js/dll/'+ replaceHash +'"></script>' + $2
+                        var injectScript = '<script type="text/javascript" src="' + assetsSubDirectory + '/js/dll/'+ replaceHash +'"></script>' + $2
                         return $1.replace($2,injectScript);
                     });
                 }
