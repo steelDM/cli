@@ -13,7 +13,7 @@ module.exports = {
     'vendor_dll': vendors
   },
   output: {
-    path: '/src/resource/js/dll/',
+    path: path: path.join(__dirname, '../src/resource/js/dll/'),
     filename: '[name]_[chunkhash].js',
     library: '[name]_[chunkhash]'
   },
@@ -87,7 +87,7 @@ ReplaceHtmlVendorPlugin.prototype.apply = function(compiler) {
                 }else{
                     //不存在则在body后插入
                     htmlData = htmlData.replace(/.*<\/body>(.*)/,function($1,$2){
-                        var injectScript = '<script type="text/javascript" src="/resource/js/dll/'+ replaceHash +'"></script>' + $2
+                        var injectScript = '<script type="text/javascript" src="./src/resource/js/dll/'+ replaceHash +'"></script>' + $2
                         return $1.replace($2,injectScript);
                     });
                 }

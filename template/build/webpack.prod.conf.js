@@ -92,7 +92,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     new CopyWebpackPlugin([
       {
         from: path.join(process.cwd(), './src/resource'),
-        to: './resource'
+        to: './src/resource'
       }
     ])
   ]
