@@ -22,8 +22,6 @@ module.exports = {
       "message": "use dll(可以支持长缓存和快速打包)?"
     }
   },
-  {
-    "skipInterpolation":"src/**/*.vue"
-  },
+  "skipInterpolation":"src/**/*.vue",
   "completeMessage":"To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dll(if install)\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
