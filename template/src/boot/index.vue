@@ -1,35 +1,48 @@
+<style>
+    .width-200{
+        width: 200px;
+    }   
+    .table{
+        overflow: auto;
+        min-width: 986px;
+    }
+    table .thop{
+        min-width: 120px;
+    }
+    table th{
+        white-space: nowrap;
+    }   
+</style>
+
 <template>
     <div>
-        <nav-menu></nav-menu>
-        <transition name="slide-fade">
-            <div id="content">
+        <headers :user-info="userInfo" :menus="menus"></headers>
+        <div class="wrapper-content">
+            <transition>
                 <router-view></router-view>
-            </div>
-        </transition>
+            </transition>
+        </div>
     </div>
 </template>
 
 <script>
-    
-    import navMenu from '@components/header.vue';
+    import store from '@vuex/index';
+    import headers from '@components/modules/header/index.vue';
 
     export default {
         components: {
-            navMenu
+            headers
+        },
+        computed:{
+            userInfo:()=> store.state.mutations.info
         },
         data() {
             return {
+                menus:[
+                    {'name':'导航1','url':'/nav1/type1/page1','curView':'/nav1'},
+                    {'name':'导航2','url':'/nav2','curView':'/nav2'}
+                ]
             };
-        },
-        mounted () {
-          this.$nextTick(function () {
-            this.init();
-          })
-        },
-        methods:{
-            init(){
-
-            }
-        }                       
+        }
     }
 </script>
