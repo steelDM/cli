@@ -21,13 +21,13 @@ module.exports = {
       "type": "confirm",
       "message": "use dll(可以支持长缓存和快速打包)?"
     }
-    // ,"lint": {
-    //   "type": "confirm",
-    //   "message": "Use ESLint to lint your code?"
-    // }
+    ,"lint": {
+      "type": "confirm",
+      "message": "Use ESLint to lint your code?"
+    }
   },
   "filters": {
-    "src/**/*": true
+    "src/**/*": false
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dll(if install)\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
