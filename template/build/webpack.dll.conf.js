@@ -6,9 +6,6 @@ var assetsSubDirectory = process.env.NODE_ENV === 'production'
     ? config.build.assetsSubDirectory
     : config.dev.assetsSubDirectory
 
-
-
-
 const vendors = [
   'vue',
   'vue-router',

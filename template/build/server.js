@@ -62,7 +62,7 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./src/resource'))
 
-var uri = 'http://localhost:' + port + '/static/index.html'
+var uri = 'http://localhost:' + port + config.dev.assetsPublicPath + '/index.html'
 
 devMiddleware.waitUntilValid(function () {
   console.log('> Listening at ' + uri + '\n')
@@ -78,4 +78,4 @@ module.exports = app.listen(port, function (err) {
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
     opn(uri)
   }
-})
+});
