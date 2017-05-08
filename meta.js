@@ -21,10 +21,6 @@ module.exports = {
       "type": "confirm",
       "message": "use dll(可以支持长缓存和快速打包)?"
     }
-    ,"lint": {
-      "type": "confirm",
-      "message": "Use ESLint to lint your code?"
-    }
   },
   {
     "skipInterpolation": "src/**/*.vue"
