@@ -26,9 +26,8 @@ module.exports = {
     //   "message": "Use ESLint to lint your code?"
     // }
   },
-  // "filters": {
-  //   ".eslintrc.js": "lint",
-  //   ".eslintignore": "lint"
-  // },
+  "filters": {
+    "src/**/*": true
+  },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dll(if install)\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
