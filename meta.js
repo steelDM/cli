@@ -26,8 +26,8 @@ module.exports = {
       "message": "Use ESLint to lint your code?"
     }
   },
-  "filters": {
-    "src/**/*": false
+  {
+    "skipInterpolation": "src/**/*.vue"
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dll(if install)\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
